@@ -120,3 +120,61 @@ DIMENSIONS AND MEASURES FOR EACH TABLE:
             - quantity
             - price
 */
+
+--==============================================================================
+-- Distinct Values
+--==============================================================================
+-- gold.dim_customers
+SELECT DISTINCT
+    country
+FROM
+    gold.dim_customers
+;
+
+
+SELECT DISTINCT
+    marital_status
+FROM
+    gold.dim_customers
+;
+
+
+--==============================================================================
+-- gold.dim_products
+--==============================================================================
+SELECT DISTINCT
+    category
+FROM
+    gold.dim_products
+;
+
+
+SELECT DISTINCT
+    subcategory
+FROM
+    gold.dim_products
+;
+
+
+SELECT DISTINCT
+    product_line
+FROM
+    gold.dim_products
+;
+
+
+--==============================================================================
+-- gold.fact_sales
+--==============================================================================
+SELECT DISTINCT
+    order_date
+FROM
+    gold.fact_sales
+;
+
+
+SELECT DISTINCT
+    shipping_date
+FROM
+    gold.fact_sales
+;
