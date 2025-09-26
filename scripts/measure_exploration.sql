@@ -62,7 +62,7 @@ SELECT
 FROM
     gold.fact_sales
 WHERE
-    order_date IS NOT NULL
+    order_number IS NOT NULL
 ;
 
 
@@ -74,7 +74,7 @@ SELECT
         FROM
             gold.fact_sales
         WHERE
-            order_date IS NOT NULL
+            order_number IS NOT NULL
     ) AS customers_with_no_orders
 FROM
     gold.fact_sales
