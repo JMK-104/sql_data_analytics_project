@@ -56,6 +56,30 @@ FROM
     gold.dim_customers
 ;
 
+-- Find the total number of customers that have placed an order
+SELECT
+    COUNT(customer_key) AS total_customers_placed_order
+FROM
+    gold.fact_sales
+WHERE
+    order_date IS NOT NULL
+;
+
+
+-- Find the total number of customers that have NOT placed any orders
+SELECT
+    COUNT(customer_key) - (
+        SELECT
+            COUNT(customer_key) AS total_customers_placed_order
+        FROM
+            gold.fact_sales
+        WHERE
+            order_date IS NOT NULL
+    ) AS customers_with_no_orders
+FROM
+    gold.fact_sales
+;
+
 
 -- Generate a comprehensive report that shows all key metrics of the business
 SELECT
