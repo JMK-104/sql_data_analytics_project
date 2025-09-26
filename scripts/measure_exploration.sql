@@ -58,7 +58,7 @@ FROM
 
 -- Find the total number of customers that have placed an order
 SELECT
-    COUNT(customer_key) AS total_customers_placed_order
+    COUNT(DISTINCT customer_key) AS total_customers_placed_order
 FROM
     gold.fact_sales
 WHERE
@@ -68,9 +68,9 @@ WHERE
 
 -- Find the total number of customers that have NOT placed any orders
 SELECT
-    COUNT(customer_key) - (
+    COUNT(DISTINCT customer_key) - (
         SELECT
-            COUNT(customer_key) AS total_customers_placed_order
+            COUNT(DISTINCT customer_key) AS total_customers_placed_order
         FROM
             gold.fact_sales
         WHERE
