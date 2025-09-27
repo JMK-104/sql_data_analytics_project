@@ -102,7 +102,7 @@ GROUP BY
     s.customer_key,
     customer_name
 ORDER BY
-    total_revenue DESC
+    total_revenue DESC, customer_name ASC
 ;
 
 
